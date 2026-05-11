@@ -1,14 +1,23 @@
 ﻿using ConsoleApp1;
+List<Project> projectList = new List<Project>();
 
-Project flowboard = new Project();
-flowboard.Name = "Flowboard";
-flowboard.TaskCount = 0;
-flowboard.IsComplete = false;
-
-void PrintProjectDetails(Project project)
-{
-    Console.WriteLine($"Project: {project.Name}");
-    Console.WriteLine($"Tasks: {project.TaskCount}");
-    Console.WriteLine($"Complete: {project.IsComplete}");
+while (true)
+{ 
+    Console.WriteLine("Enter project name:");
+    string name = Console.ReadLine();
+    if (name == "quit")
+    {
+        break;
+    }
+    Project newProject = new Project();
+    newProject.Name = name;
+    newProject.TaskCount = 0;
+    newProject.IsComplete = false;
+    projectList.Add(newProject);
+    Console.WriteLine($"Project {newProject.Name} has been added successfully");
 }
-PrintProjectDetails(flowboard);
+Console.WriteLine("Projects Added:");
+foreach  (Project p in projectList)
+{
+    Console.WriteLine($"{p.Name}");
+}

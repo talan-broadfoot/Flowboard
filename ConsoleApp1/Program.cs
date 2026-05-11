@@ -20,20 +20,32 @@ while (true)
             Console.WriteLine($"Project {newProject.Name} has been added successfully");
             break;
         case "2":
+            if (projectList.Count == 0)
+            {
+                Console.WriteLine("No projects available to add task.");
+                break;
+            }
             for (int i = 0; i < projectList.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {projectList[i].Name}");
             }
             Console.WriteLine("Please select project number:");
             string taskChoice = Console.ReadLine();
-            Console.WriteLine("Please enter task name:");
-            string taskName = Console.ReadLine();
-            ConsoleApp1.Task newTask = new ConsoleApp1.Task();
-            newTask.Name = taskName;
-            newTask.IsComplete = false;
-            int projectIndex = int.Parse(taskChoice) - 1;
-            projectList[projectIndex].Tasks.Add(newTask);
-            Console.WriteLine($"Task {newTask.Name} has been added.");
+            try
+            {
+                int projectIndex = int.Parse(taskChoice) - 1;
+                Console.WriteLine("Please enter task name:");
+                string taskName = Console.ReadLine();
+                ConsoleApp1.Task newTask = new ConsoleApp1.Task();
+                newTask.Name = taskName;
+                newTask.IsComplete = false;
+                projectList[projectIndex].Tasks.Add(newTask);
+                Console.WriteLine($"Task {newTask.Name} has been added.");
+            }
+            catch
+            {
+                Console.WriteLine("You must enter a valid number.");
+            }
             break;
         case "3":
             Console.WriteLine("Projects Added:");

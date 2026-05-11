@@ -4,11 +4,9 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    internal class Project
+    internal class Task
     {
         public string Name;
-        public int TaskCount;
         public bool IsComplete;
-        public List<Task> Tasks = new List<Task>();
     }
 }

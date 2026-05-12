@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|c:\\dev\\flowboard\\consoleapp1\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|c:\\dev\\flowboard\\consoleapp1\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|c:\\dev\\flowboard\\consoleapp1\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,14 +32,14 @@
               "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
               "ToolTip": "C:\\Dev\\Flowboard\\ConsoleApp1\\Program.cs",
               "RelativeToolTip": "ConsoleApp1\\Program.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T21:30:58.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Dev\\Flowboard\\ConsoleApp1\\Task.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Task.cs",
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Project.cs",
               "DocumentMoniker": "C:\\Dev\\Flowboard\\ConsoleApp1\\Project.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Project.cs",
@@ -60,7 +60,8 @@
               "RelativeToolTip": "ConsoleApp1\\Project.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T21:32:12.434Z"
+              "WhenOpened": "2026-05-10T21:32:12.434Z",
+              "EditorCaption": ""
             }
           ]
         }

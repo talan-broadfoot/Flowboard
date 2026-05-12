@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
               "ToolTip": "C:\\Dev\\Flowboard\\ConsoleApp1\\Program.cs",
               "RelativeToolTip": "ConsoleApp1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFUAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T21:30:58.553Z",
               "EditorCaption": ""
@@ -47,7 +47,8 @@
               "RelativeToolTip": "ConsoleApp1\\Task.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T16:02:08.605Z"
+              "WhenOpened": "2026-05-11T16:02:08.605Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

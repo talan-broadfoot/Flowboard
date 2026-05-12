@@ -83,10 +83,10 @@ while (true)
             Console.WriteLine("Projects Added:");
             foreach (Project p in projectList)
             {
-                Console.WriteLine($"{p.Name}");
+                Console.WriteLine($"== {p.Name} ==");
                 foreach (ConsoleApp1.Task t in p.Tasks)
                 {
-                    Console.WriteLine($"Task: {t.Name}");
+                    Console.WriteLine($"Tasks: {t.Name} - Complete: {t.IsComplete}");
                 }
             }
             return;

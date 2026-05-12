@@ -4,9 +4,8 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    internal class Task
+    internal class BugFixProject : Project
     {
-        public string Name;
-        public TaskStatus Status;
+        public string BugID;
     }
 }

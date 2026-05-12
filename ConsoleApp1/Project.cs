@@ -4,11 +4,29 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    internal class Project
+    internal class Project : IProject
     {
         public string Name;
-        public int TaskCount;
-        public bool IsComplete;
+        public TaskStatus Status;
         public List<Task> Tasks = new List<Task>();
+
+        private int _taskCount;
+        public int TaskCount
+        {
+            get { return _taskCount; }
+            set
+            {
+                if (value >= 0)
+                    _taskCount = value;
+            }
+        }
+        public void Start()
+        {
+            Console.WriteLine("Project started");
+        }
+        public void Complete()
+        {
+            Console.WriteLine("Project completed");
+        }
     }
-}
+}   

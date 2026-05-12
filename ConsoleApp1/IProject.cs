@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    internal class Task
+    internal interface IProject
     {
-        public string Name;
-        public TaskStatus Status;
+        void Start();
+        void Complete();
     }
 }

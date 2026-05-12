@@ -4,9 +4,11 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    internal class Task
+    internal enum TaskStatus
     {
-        public string Name;
-        public TaskStatus Status;
+        NotStarted,
+        InProgerss,
+        Complete,
+        Canceled
     }
 }

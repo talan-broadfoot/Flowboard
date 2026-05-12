@@ -42,7 +42,7 @@ void AddProject(List<Project> projectList)
     Project newProject = new Project();
     newProject.Name = name;
     newProject.TaskCount = 0;
-    newProject.IsComplete = false;
+    newProject.Status = ConsoleApp1.TaskStatus.NotStarted;
     projectList.Add(newProject);
     Console.WriteLine($"Project {newProject.Name} has been added successfully");
 }
@@ -66,7 +66,7 @@ void AddTask(List<Project> projectList)
         string taskName = Console.ReadLine();
         ConsoleApp1.Task newTask = new ConsoleApp1.Task();
         newTask.Name = taskName;
-        newTask.IsComplete = false;
+        newTask.Status = ConsoleApp1.TaskStatus.NotStarted;
         projectList[projectIndex].Tasks.Add(newTask);
         Console.WriteLine($"Task {newTask.Name} has been added.");
     }
@@ -98,7 +98,7 @@ void MarkTaskComplete(List<Project> projectList)
         Console.WriteLine("Please enter task number:");
         string taskNumber = Console.ReadLine();
         int taskIndex = int.Parse(taskNumber) - 1;
-        projectList[projectIndex].Tasks[taskIndex].IsComplete = true;
+        projectList[projectIndex].Tasks[taskIndex].Status = ConsoleApp1.TaskStatus.Complete;
         Console.WriteLine("Task marked as complete!");
     }
     catch
@@ -114,7 +114,7 @@ void PrintSummary(List<Project> projectList)
         Console.WriteLine($"== {p.Name} ==");
         foreach (ConsoleApp1.Task t in p.Tasks)
         {
-            Console.WriteLine($"Tasks: {t.Name} - Complete: {t.IsComplete}");
+            Console.WriteLine($"Tasks: {t.Name} - Status: {t.Status}");
         }
     }
 }

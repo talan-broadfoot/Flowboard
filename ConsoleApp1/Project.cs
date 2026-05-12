@@ -9,7 +9,6 @@ namespace ConsoleApp1
         public string Name;
         public TaskStatus Status;
         public List<Task> Tasks = new List<Task>();
-
         private int _taskCount;
         public int TaskCount
         {
@@ -28,5 +27,6 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Project completed");
         }
+        public string Description;
     }
 }   

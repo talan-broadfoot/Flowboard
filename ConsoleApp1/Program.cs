@@ -11,21 +11,25 @@ while (true)
     {
         case "1":
             {
+                // Asks user for project name and adds it to the list
                 AddProject(projectList);
                 break;
             }
         case "2":
             {
+                // Asks user for which project they want to add the task to, asks for task name and confirms it was added
                 AddTask(projectList);
                 break;
             }
         case "3":
             {
+                //Asks user for which project and then which task they would like to mark complete and confirms it was marked
                 MarkTaskComplete(projectList);
                 break;
             }
         case "4":
             {
+                //Prints summary of what was done during the session after choosing to quit
                 PrintSummary(projectList);
                 return;
             }

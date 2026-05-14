@@ -16,5 +16,10 @@ namespace Flowboard_API.Controllers
                 new Project { Id = 2, Name = "Fix shed", Status = "Not Started"}
             });
         }
+        [HttpPost]
+        public IActionResult CreateProject([FromBody] Project project)
+        {
+            return Ok($"Project: {project.Name} created.");
+        }
     }
 }

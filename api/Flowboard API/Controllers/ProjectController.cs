@@ -25,5 +25,30 @@ namespace Flowboard_API.Controllers
             _context.SaveChanges();
             return Ok($"Project: {project.Name} created.");
         }
+        [HttpPut("{id}")]
+        public IActionResult UpdateProjects([FromRoute] int id, [FromBody] Project project)
+        {
+            Project existingProject = _context.Projects.Find(id);
+            if (existingProject == null)
+            {
+                return NotFound();
+            }
+            existingProject.Name = project.Name;
+            existingProject.Status = project.Status;
+            _context.SaveChanges();
+            return Ok("Saved Changes.");
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProjects([FromRoute] int id)
+        {
+            Project deleteProject = _context.Projects.Find(id);
+            if (deleteProject == null)
+            {
+                return NotFound();
+            }
+            _context.Projects.Remove(deleteProject);
+            _context.SaveChanges();
+            return Ok("Deleted Project.");
+        }
     }
 }

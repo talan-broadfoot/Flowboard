@@ -1,1 +1,8 @@
-<p>projects works!</p>
+<h1>Projects</h1>
+<p>{{ projects.length }} projects loaded</p>
+
+<ul>
+    @for (project of projects; track project.id) {
+        <li>{{ project.name }}</li>
+    }
+</ul>

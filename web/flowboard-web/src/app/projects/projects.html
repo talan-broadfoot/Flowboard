@@ -6,4 +6,8 @@
         <li>{{ project.name }}</li>
     }
 </ul>
-<form><input type="text" placeholder="Project Name"><input type="text" placeholder="Project Status"></form>
+<form (ngSubmit)="addProject()">
+    <input type ="text" [(ngModel)]="newProjectName" name ="projectName" placeholder="Project Name">
+    <input type ="text" [(ngModel)]="newProjectStatus" name ="projectStatus" placeholder="Project Status">
+    <button type="submit">Add Project</button>
+</form>

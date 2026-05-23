@@ -27,4 +27,10 @@ export class Projects implements OnInit {
       this.projects.push(newProject);
     })
   }
+  deleteProject(projectId: number) {
+    this.projectService.deleteProject(projectId).subscribe(deleteProject => {
+      console.log(deleteProject)
+      this.projects = this.projects.filter(project => project.id !== projectId);
+    })
+  }
 }

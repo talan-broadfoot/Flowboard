@@ -16,4 +16,7 @@ export class ProjectService {
     createProject(name: string, status: string): Observable<any> {
         return this.http.post<any>(this.apiUrl, {name: name, status: status}) 
     }
+    deleteProject(projectId: number): Observable<any> {
+        return this.http.delete<any>(`${this.apiUrl}/${projectId}`)
+    }
 }

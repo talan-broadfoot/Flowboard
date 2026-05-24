@@ -23,7 +23,7 @@ namespace Flowboard_API.Controllers
         {
             _context.Projects.Add(project);
             _context.SaveChanges();
-            return Ok($"Project: {project.Name} created.");
+            return Ok(project);
         }
         [HttpPut("{id}")]
         public IActionResult UpdateProjects([FromRoute] int id, [FromBody] Project project)
@@ -48,7 +48,7 @@ namespace Flowboard_API.Controllers
             }
             _context.Projects.Remove(deleteProject);
             _context.SaveChanges();
-            return Ok("Deleted Project.");
+            return NoContent();
         }
     }
 }

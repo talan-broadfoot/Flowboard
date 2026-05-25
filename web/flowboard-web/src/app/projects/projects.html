@@ -3,8 +3,12 @@
 
 <ul>
     @for (project of projects; track project.id) {
-        <li>{{ project.name }}</li>
-        <button type="button" (click)="deleteProject(project.id)">Delete Project</button>
+        <li>
+            <a [routerLink]="['/projects', project.id]">
+                {{ project.name }}
+            </a>
+            <button type="button" (click)="deleteProject(project.id)">Delete Project</button>
+        </li>
     }
 </ul>
 <form (ngSubmit)="addProject()">

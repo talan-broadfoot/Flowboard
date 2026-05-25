@@ -1,10 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -19,6 +20,7 @@ export class Projects implements OnInit {
     this.projectService.getProjects().subscribe(data => {
       console.log(data);
       this.projects = data;
+      this.cdr.detectChanges();
     })
   }
   addProject() {

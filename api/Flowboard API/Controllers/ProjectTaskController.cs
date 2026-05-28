@@ -38,7 +38,7 @@ namespace Flowboard_API.Controllers
             existingTask.Status = task.Status;
             existingTask.Description = task.Description;
             _context.SaveChanges();
-            return Ok("Saved Changes.");
+            return Ok(existingTask);
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteTasks([FromRoute] int id)

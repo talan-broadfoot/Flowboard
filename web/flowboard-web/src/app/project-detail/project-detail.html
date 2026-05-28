@@ -3,8 +3,19 @@
 <ul>
     @for (task of tasks; track task.id) {
         <li>
+            @if (task.id === editingTaskId) {
+                <form (ngSubmit)="saveTask(task.id)">
+                    <input type="text" [(ngModel)]="editTaskName" name="editTaskName" placeholder="Task Name">
+                    <input type="text" [(ngModel)]="editTaskStatus" name="editTaskStatus" placeholder="Task Status">
+                    <input type="text" [(ngModel)]="editTaskDescription" name="editTaskDescription" placeholder="Task Description">
+                    <button type="submit">Update Task</button>
+                </form>
+            }
+            @else {
             {{ task.name }}
             <button type="button" (click)="deleteTask(task.id)">Delete</button>
+            <button type="button" (click)="startEditing(task)">Edit</button>
+            }
         </li>
     }
 </ul>

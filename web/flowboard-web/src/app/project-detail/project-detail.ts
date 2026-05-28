@@ -16,6 +16,10 @@ export class ProjectDetail implements OnInit {
   newTaskName: string = '';
   newTaskStatus: string = '';
   newTaskDescription: string = '';
+  editingTaskId: number | null = null;
+  editTaskName: string = '';
+  editTaskStatus: string = '';
+  editTaskDescription: string = '';
 
   constructor(private route: ActivatedRoute, private taskService: TaskService, private cdr: ChangeDetectorRef) {}
 
@@ -41,4 +45,22 @@ export class ProjectDetail implements OnInit {
       this.cdr.detectChanges();
     });
   }
-}
+  startEditing(task: any) {
+    this.editingTaskId = task.id;
+    this.editTaskName = task.name;
+    this.editTaskStatus = task.status;
+    this.editTaskDescription = task.description;
+    this.cdr.detectChanges();
+  }
+  saveTask(taskId: number) {
+    this.taskService.updateTask(this.projectId, {id: taskId, name: this.editTaskName, status: this.editTaskStatus, description: this.editTaskDescription }).subscribe(updatedTask => {
+        console.log(updatedTask);
+        const index = this.tasks.findIndex(t => t.id === taskId);
+        if (index !== -1) {
+            this.tasks[index] = updatedTask;
+        }
+        this.editingTaskId = null;
+        this.cdr.detectChanges();
+      });
+    }
+  }

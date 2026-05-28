@@ -2,6 +2,15 @@
 
 <ul>
     @for (task of tasks; track task.id) {
-        <li>{{ task.name }}</li>
+        <li>
+            {{ task.name }}
+            <button type="button" (click)="deleteTask(task.id)">Delete</button>
+        </li>
     }
 </ul>
+<form (ngSubmit)="addTask()">
+    <input type ="text" [(ngModel)]="newTaskName" name ="taskName" placeholder="Task Name">
+    <input type ="text" [(ngModel)]="newTaskStatus" name ="taskStatus" placeholder="Task Status">
+    <input type ="text" [(ngModel)]="newTaskDescription" name ="taskDescription" placeholder="Task Description">
+    <button type="submit">Add Task</button>
+</form>

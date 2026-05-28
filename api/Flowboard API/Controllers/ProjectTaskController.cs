@@ -19,8 +19,9 @@ namespace Flowboard_API.Controllers
             return Ok(_context.Tasks.Where(t => t.ProjectId == projectId).ToList());
         }
         [HttpPost]
-        public IActionResult CreateTask([FromBody] ProjectTask task)
+        public IActionResult CreateTask([FromRoute] int projectId, [FromBody] ProjectTask task)
         {
+            task.ProjectId = projectId;
             _context.Tasks.Add(task);
             _context.SaveChanges();
             return Ok(task);

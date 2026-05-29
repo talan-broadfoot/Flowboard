@@ -5,7 +5,7 @@
     @for (project of projects; track project.id) {
         <li>
             <a [routerLink]="['/projects', project.id]">
-                {{ project.name }}
+                {{ project.name }} | Status: {{ project.status }}
             </a>
             <button type="button" (click)="deleteProject(project.id)">Delete Project</button>
         </li>

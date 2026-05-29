@@ -12,7 +12,7 @@
                 </form>
             }
             @else {
-            {{ task.name }}
+            {{ task.name }} | Status: {{ task.status }} | Description: {{ task.description }}
             <button type="button" (click)="deleteTask(task.id)">Delete</button>
             <button type="button" (click)="startEditing(task)">Edit</button>
             }

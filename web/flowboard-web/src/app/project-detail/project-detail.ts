@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../task.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.css',
 })

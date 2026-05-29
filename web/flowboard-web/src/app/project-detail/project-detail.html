@@ -1,5 +1,7 @@
 <h1>Tasks</h1>
-
+<a [routerLink]="['/projects']">
+    Back to Projects
+</a>
 <ul>
     @for (task of tasks; track task.id) {
         <li>

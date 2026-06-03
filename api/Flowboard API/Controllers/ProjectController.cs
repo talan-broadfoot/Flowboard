@@ -36,7 +36,7 @@ namespace Flowboard_API.Controllers
             existingProject.Name = project.Name;
             existingProject.Status = project.Status;
             _context.SaveChanges();
-            return Ok("Saved Changes.");
+            return Ok(existingProject);
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteProjects([FromRoute] int id)

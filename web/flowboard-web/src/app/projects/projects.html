@@ -1,19 +1,30 @@
+<div class="container">
 <h1>Projects</h1>
+
 <p>{{ projects.length }} projects loaded</p>
 
 <ul>
     @for (project of projects; track project.id) {
         <li>
-            <a [routerLink]="['/projects', project.id]">
-                {{ project.name }} 
-            </a>
-            | Status: {{ project.status }}
-            <button type="button" (click)="deleteProject(project.id)">Delete Project</button>
+            @if (project.id === editingProjectID) {
+                <form (ngSubmit)="saveProject(project.id)">
+                    <input type="text" [(ngModel)]="editProjectName" name="editProjectName">
+                    <input type="text" [(ngModel)]="editProjectStatus" name="editProjectStatus">
+                    <button class="btn-add" type="submit">Save</button>
+                </form>
+            }
+            @else {
+                <button class="btn-nav" type="button" (click)="navigateToProject(project.id)">{{project.name}}</button>
+                | Status: {{ project.status }}
+                <button class="btn-edit" type="button" (click)="startEditingProject(project)">Edit</button>
+                <button class = "btn-delete" type="button" (click)="deleteProject(project.id)">Delete Project</button>
+            }
         </li>
     }
 </ul>
 <form (ngSubmit)="addProject()">
     <input type ="text" [(ngModel)]="newProjectName" name ="projectName" placeholder="Project Name">
     <input type ="text" [(ngModel)]="newProjectStatus" name ="projectStatus" placeholder="Project Status">
-    <button type="submit">Add Project</button>
+    <button class="btn-add" type="submit">Add Project</button>
 </form>
+</div>

@@ -1,7 +1,6 @@
+<div class="container">
+<button class="btn-nav" type="button" (click)="navigateToProjects()">Back to Projects</button>
 <h1>Tasks</h1>
-<a [routerLink]="['/projects']">
-    Back to Projects
-</a>
 <ul>
     @for (task of tasks; track task.id) {
         <li>
@@ -10,13 +9,13 @@
                     <input type="text" [(ngModel)]="editTaskName" name="editTaskName" placeholder="Task Name">
                     <input type="text" [(ngModel)]="editTaskStatus" name="editTaskStatus" placeholder="Task Status">
                     <input type="text" [(ngModel)]="editTaskDescription" name="editTaskDescription" placeholder="Task Description">
-                    <button type="submit">Update Task</button>
+                    <button class="btn-add" type="submit">Update Task</button>
                 </form>
             }
             @else {
             {{ task.name }} | Status: {{ task.status }} | Description: {{ task.description }}
-            <button type="button" (click)="deleteTask(task.id)">Delete</button>
-            <button type="button" (click)="startEditing(task)">Edit</button>
+            <button class="btn-edit" type="button" (click)="startEditing(task)">Edit</button>
+            <button class="btn-delete" type="button" (click)="deleteTask(task.id)">Delete</button>
             }
         </li>
     }
@@ -25,5 +24,6 @@
     <input type ="text" [(ngModel)]="newTaskName" name ="taskName" placeholder="Task Name">
     <input type ="text" [(ngModel)]="newTaskStatus" name ="taskStatus" placeholder="Task Status">
     <input type ="text" [(ngModel)]="newTaskDescription" name ="taskDescription" placeholder="Task Description">
-    <button type="submit">Add Task</button>
+    <button class="btn-add" type="submit">Add Task</button>
 </form>
+</div>

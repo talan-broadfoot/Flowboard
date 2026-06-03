@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../task.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.css',
 })
@@ -22,7 +22,7 @@ export class ProjectDetail implements OnInit {
   editTaskStatus: string = '';
   editTaskDescription: string = '';
 
-  constructor(private route: ActivatedRoute, private taskService: TaskService, private cdr: ChangeDetectorRef) {}
+  constructor(private route: ActivatedRoute, private taskService: TaskService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
     this.projectId = Number(this.route.snapshot.paramMap.get('id'));
@@ -40,11 +40,13 @@ export class ProjectDetail implements OnInit {
     });
   }
   deleteTask(taskId: number) {
-    this.taskService.deleteTask(this.projectId, taskId).subscribe(deleteTask => {
-      console.log(deleteTask);
-      this.tasks = this.tasks.filter(task => task.id !== taskId);
-      this.cdr.detectChanges();
-    });
+    if (window.confirm('Are you sure you want to delete this task?')) {
+      this.taskService.deleteTask(this.projectId, taskId).subscribe(deleteTask => {
+        console.log(deleteTask);
+        this.tasks = this.tasks.filter(task => task.id !== taskId);
+        this.cdr.detectChanges();
+      });
+    }
   }
   startEditing(task: any) {
     this.editingTaskId = task.id;
@@ -54,14 +56,17 @@ export class ProjectDetail implements OnInit {
     this.cdr.detectChanges();
   }
   saveTask(taskId: number) {
-    this.taskService.updateTask(this.projectId, {id: taskId, name: this.editTaskName, status: this.editTaskStatus, description: this.editTaskDescription }).subscribe(updatedTask => {
-        console.log(updatedTask);
-        const index = this.tasks.findIndex(t => t.id === taskId);
-        if (index !== -1) {
-            this.tasks[index] = updatedTask;
-        }
-        this.editingTaskId = null;
-        this.cdr.detectChanges();
-      });
-    }
+    this.taskService.updateTask(this.projectId, { id: taskId, name: this.editTaskName, status: this.editTaskStatus, description: this.editTaskDescription }).subscribe(updatedTask => {
+      console.log(updatedTask);
+      const index = this.tasks.findIndex(t => t.id === taskId);
+      if (index !== -1) {
+        this.tasks[index] = updatedTask;
+      }
+      this.editingTaskId = null;
+      this.cdr.detectChanges();
+    });
   }
+  navigateToProjects() {
+    this.router.navigate(['/projects']);
+  }
+}

@@ -11,5 +11,6 @@ namespace Flowboard_API.Data
         }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTask> Tasks { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

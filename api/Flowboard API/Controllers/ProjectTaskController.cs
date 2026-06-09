@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Flowboard_API.Models;
 using Flowboard_API.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Flowboard_API.Controllers
 {
     [ApiController]
     [Route("api/project/{projectId}/tasks")]
+    [Authorize]
     public class ProjectTaskController : ControllerBase
     {
         private readonly FlowboardContext _context;

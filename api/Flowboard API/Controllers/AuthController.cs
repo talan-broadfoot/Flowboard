@@ -40,7 +40,7 @@ namespace Flowboard_API.Controllers
             {
                 return Unauthorized("Invalid username or password");
             }
-            return Ok(new { Token = GenerateToken(user) });
+            return Ok(new { token = GenerateToken(user) });
         }
         private string GenerateToken (User user)
         {
